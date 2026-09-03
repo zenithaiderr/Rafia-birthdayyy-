@@ -311,6 +311,25 @@ function endGame(){clearInterval(timer);document.getElementById("heart").style.d
 function openLetter(){document.getElementById("letter").classList.add("show");document.getElementById("ln").classList.remove("hidden")}
 function reveal(){go(10);for(let i=0;i<100;i++){let c=document.createElement("div");c.className="confetti";c.style.left=Math.random()*100+"vw";c.style.animationDelay=Math.random()*1.5+"s";document.body.appendChild(c);setTimeout(()=>c.remove(),4500)}}
 loadQ();
+const popEmojis=["💖","✨","🎀","💕","🌸","🥳","🎂","🫶","⭐","💫"];
+
+function popEmoji(){
+  const box=document.getElementById("emojiPop");
+  if(!box)return;
+
+  const emoji=document.createElement("div");
+  emoji.className="popEmoji";
+  emoji.textContent=popEmojis[Math.floor(Math.random()*popEmojis.length)];
+
+  emoji.style.left=(10+Math.random()*80)+"%";
+  emoji.style.top=(20+Math.random()*60)+"%";
+
+  box.appendChild(emoji);
+
+  setTimeout(()=>emoji.remove(),1800);
+}
+
+setInterval(popEmoji,2200);  
 </script>
 </body>
 </html>
