@@ -148,6 +148,33 @@ input,textarea{width:100%;margin-top:20px;padding:16px;border-radius:18px;border
 .letter{display:none;background:#fff5fb;color:#54213f;text-align:left;padding:25px;border-radius:12px;font-family:"Comic Sans MS",cursive;line-height:1.8}.letter.show{display:block;animation:in .7s}.letter p{color:#54213f}
 #game{height:320px;max-width:500px;margin:20px auto;border-radius:22px;background:#0003;border:1px solid #ffffff18;position:relative;overflow:hidden}#heart{position:absolute;font-size:45px;cursor:pointer;display:none}.score{margin:12px}
 .cake{font-size:90px;animation:bounce 1s infinite alternate}@keyframes bounce{to{transform:translateY(-10px)}}.finalTitle{font-size:clamp(42px,12vw,85px);background:linear-gradient(90deg,#ff72c8,#fff,#ae70ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cake{
+  animation:
+    cakeEntrance 1s cubic-bezier(.22,1,.36,1) both,
+    cakeFloat 3s ease-in-out 1s infinite;
+}
+
+@keyframes cakeEntrance{
+  from{
+    opacity:0;
+    transform:scale(.5) translateY(30px);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1) translateY(0);
+  }
+}
+
+@keyframes cakeFloat{
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-8px);
+  }
+}
 .confetti{position:fixed;top:-20px;width:8px;height:14px;animation:fall 3s linear forwards;z-index:100}@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
 @media(max-width:520px){.card{padding:28px 18px}button{width:100%;margin:6px 0}.options{display:block}.memories{grid-template-columns:1fr}}
 </style>
