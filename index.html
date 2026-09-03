@@ -9,7 +9,29 @@
 body{min-height:100vh;font-family:Arial,sans-serif;color:#fff;background:radial-gradient(circle at 20% 20%,#ff168044,transparent 30%),radial-gradient(circle at 80% 80%,#792cff44,transparent 30%),linear-gradient(135deg,#090014,#21002f,#090014);overflow-x:hidden}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.3;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:70px 70px}
 .scene{display:none;min-height:100vh;width:100%;padding:30px 18px;align-items:center;justify-content:center;text-align:center;position:relative;z-index:2}
-.scene.active{display:flex;animation:in .7s ease}
+.scene.active{display:flex;animation:in .7s ease} 
+.scene.active{
+  animation:cinematicIn .8s cubic-bezier(.22,1,.36,1);
+}
+
+@keyframes cinematicIn{
+  0%{
+    opacity:0;
+    transform:translateY(35px) scale(.94);
+    filter:blur(10px);
+  }
+
+  60%{
+    opacity:1;
+    transform:translateY(-5px) scale(1.01);
+    filter:blur(0);
+  }
+
+  100%{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
 @keyframes in{from{opacity:0;transform:translateY(25px) scale(.97)}to{opacity:1;transform:none}}
 .card{width:min(650px,100%);padding:35px 24px;border-radius:28px;background:#ffffff12;border:1px solid #ffffff22;box-shadow:0 20px 70px #0008;backdrop-filter:blur(15px)}
 h1{font-size:clamp(38px,10vw,70px);margin-bottom:20px}h2{font-size:clamp(25px,7vw,42px);margin-bottom:20px}p{font-size:17px;line-height:1.7;color:#ffffffdd}.small{font-size:13px;letter-spacing:2px;text-transform:uppercase;opacity:.65;margin-bottom:15px}.pink{color:#ff70c5}
