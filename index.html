@@ -177,6 +177,42 @@ input,textarea{width:100%;margin-top:20px;padding:16px;border-radius:18px;border
 }
 .confetti{position:fixed;top:-20px;width:8px;height:14px;animation:fall 3s linear forwards;z-index:100}@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
 @media(max-width:520px){.card{padding:28px 18px}button{width:100%;margin:6px 0}.options{display:block}.memories{grid-template-columns:1fr}}
+#emojiPop{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:9999;
+}
+
+.popEmoji{
+  position:absolute;
+  font-size:28px;
+  animation:emojiPop 1.8s ease-out forwards;
+  will-change:transform,opacity;
+}
+
+@keyframes emojiPop{
+  0%{
+    opacity:0;
+    transform:scale(.2) rotate(-20deg);
+  }
+
+  20%{
+    opacity:1;
+    transform:scale(1.25) rotate(10deg);
+  }
+
+  50%{
+    opacity:1;
+    transform:scale(1) translateY(-15px) rotate(-5deg);
+  }
+
+  100%{
+    opacity:0;
+    transform:scale(.8) translateY(-100px) rotate(20deg);
+  }
+    }
 </style>
 </head>
 <body>
