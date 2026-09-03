@@ -120,6 +120,31 @@ input,textarea{width:100%;margin-top:20px;padding:16px;border-radius:18px;border
   filter:brightness(1.08);
 }
 .envelope{width:190px;height:125px;background:#f3cce6;margin:25px auto;border-radius:10px;position:relative;cursor:pointer;box-shadow:0 15px 40px #0007}.envelope:before{content:"";position:absolute;inset:0;background:#ddaaca;clip-path:polygon(0 0,50% 55%,100% 0)}.envelope span{position:absolute;bottom:18px;left:0;right:0;color:#702050;font-weight:bold}
+.envelope{
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease,
+    filter .4s ease;
+  animation:envelopeFloat 3s ease-in-out infinite;
+}
+
+.envelope:hover{
+  transform:translateY(-7px) scale(1.03) rotate(-1deg);
+  box-shadow:
+    0 15px 40px rgba(255,80,180,.25),
+    0 0 30px rgba(255,80,180,.15);
+  filter:brightness(1.08);
+}
+
+@keyframes envelopeFloat{
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-5px);
+  }
+}
 .letter{display:none;background:#fff5fb;color:#54213f;text-align:left;padding:25px;border-radius:12px;font-family:"Comic Sans MS",cursive;line-height:1.8}.letter.show{display:block;animation:in .7s}.letter p{color:#54213f}
 #game{height:320px;max-width:500px;margin:20px auto;border-radius:22px;background:#0003;border:1px solid #ffffff18;position:relative;overflow:hidden}#heart{position:absolute;font-size:45px;cursor:pointer;display:none}.score{margin:12px}
 .cake{font-size:90px;animation:bounce 1s infinite alternate}@keyframes bounce{to{transform:translateY(-10px)}}.finalTitle{font-size:clamp(42px,12vw,85px);background:linear-gradient(90deg,#ff72c8,#fff,#ae70ff);-webkit-background-clip:text;background-clip:text;color:transparent}
