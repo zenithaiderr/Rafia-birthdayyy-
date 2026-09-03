@@ -296,11 +296,7 @@ Happy 17th Birthday, Rafia. 🎂❤️<br><br>— Ali</p></div>
 
 <script>
 let current=1;
-function go(n){document.querySelectorAll(".scene").forEach(x=>x.classList.remove("active"));let el=document.getElementById(n===10?"final":"s"+n);if(el){el.classList.add("active");current=n;if(n===10){
-  const music=document.getElementById("birthdayMusic");
-  music.currentTime=0;
-  music.play();
-}document.getElementById("bar").style.width=((n-1)/9*100)+"%";window.scrollTo(0,0)}}
+function go(n){document.querySelectorAll(".scene").forEach(x=>x.classList.remove("active"));let el=document.getElementById(n===10?"final":"s"+n);if(el){el.classList.add("active");current=n;}document.getElementById("bar").style.width=((n-1)/9*100)+"%";window.scrollTo(0,0)}}
 function birthday(n){let r=["BRO 😭 You really chose THAT?","Correct... but I expected you to know faster 👀","YESSSS 🎂 Obviously it's YOUR day!"];document.getElementById("br").textContent=r[n];document.getElementById("bn").classList.remove("hidden")}
 const questions=[
 {q:"How did we originally meet? 👀",o:["Random group chat 😭","School","A family event","I don't remember 💀"],r:["YES 😭 A completely random group chat started all this.","Imagine if we met at school 💀","Family event?? Where did you get that from? 😭","HOW DO YOU NOT REMEMBER 😭"]},
